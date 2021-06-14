@@ -1,0 +1,165 @@
+<style>
+table.hukidashi1 {
+	border-style: none;
+}
+table.hukidashi1 tbody tr td{
+		border-style: none;
+	}
+table.hukidashi1 tbody tr td:nth-child(1){
+		width: 70px;
+	padding:0;
+	}
+	table.hukidashi1 tbody tr:nth-last-child(1){
+font-size: 0.7em;
+opacity: 70%;
+text-align: center;
+	}
+  
+.tab-radio { /* radio */
+  display: none;
+}
+.tab-menu {
+background-color: rgb(23 60 43 / 75%);
+border-radius: 0.5em;
+width: 100%;
+}
+.tab-menu tbody {
+border: solid 2px #e4c81eb3;
+}
+.tab-menu tbody tr td img{
+	margin: 0.5em;
+}
+table.tab-menu tbody tr:nth-last-child(1) td{
+padding-bottom: 1em;
+padding-left: 1.5em;
+color: #fff;
+	}
+.tab-trigger { /* label */
+  text-align: left;
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #d3d3d3c2;
+  margin: 0.5em;
+}
+
+#tab01:checked ~ .tab-menu label#tabTrigger01,
+#tab02:checked ~ .tab-menu label#tabTrigger02,
+#tab04:checked ~ .tab-menu label#tabTrigger04,
+#tab05:checked ~ .tab-menu label#tabTrigger05{
+  background-color: #ade6ae;
+}
+
+.tab-content {
+}
+.tab-content__item {
+  box-sizing: border-box;
+  display: none;
+  text-align: left;
+}
+
+#tab01:checked ~ .tab-content #tabTarget01,
+#tab02:checked ~ .tab-content #tabTarget02,
+#tab04:checked ~ .tab-content #tabTarget04,
+#tab05:checked ~ .tab-content #tabTarget05{
+  display: block;
+  animation: fade 0.5s ease;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}  
+.ending{
+	background-color: rgba(100,100,200,0.2);
+border-radius: 0.5em;
+padding: 0.5em;
+text-align: center;
+}
+</style>
+  <table class="hukidashi1">
+  <tbody>
+    <tr>
+      <td>
+<img src="" style="width: 100%; background-color:blue;color:#fff;" alt="character image">
+</td>
+<td rowspan="2">Now we have too much time. Do you wanna hang out?
+</td>
+</tr>
+<tr>
+<td>character name</td>
+</tr>
+</tbody>
+</table>
+<input type="radio" name="tab1" class="tab-radio" id="tab01" checked>
+<input type="radio" name="tab1" class="tab-radio" id="tab02">
+  <table class="hukidashi1 tab-menu">
+  <tbody>
+    <tr>
+      <td>
+<img src="" style="width: 100%; background-color:red;color:#fff;" alt="character image">
+</td>
+<td rowspan="2">
+<label for="tab01" id="tabTrigger01" class="tab-trigger">A. Okay, let&quot;s play this game.</label>
+<label for="tab02" id="tabTrigger02" class="tab-trigger">B. No no no, we should not hang out.</label>
+</td>
+</tr>
+<tr>
+<td>character name</td>
+</tr>
+</tbody>
+</table>
+
+<div class="tab-content">
+  <div class="tab-content__item" id="tabTarget01">
+    <p>They enjoyed the game and spent meaningful time.</p>
+  </div><!-- .tab-content__item -->
+  <div class="tab-content__item" id="tabTarget02">
+   <table class="hukidashi1">
+  <tbody>
+    <tr>
+      <td>
+<img src="" style="width: 100%; background-color:blue;color:#fff;" alt="character image">
+</td>
+<td rowspan="2">So, what would we do?
+</td>
+</tr>
+<tr>
+<td>character name</td>
+</tr>
+</tbody>
+</table>
+   <input type="radio" name="tab2" class="tab-radio" id="tab04" checked>
+<input type="radio" name="tab2" class="tab-radio" id="tab05">
+      <table class="hukidashi1 tab-menu">
+  <tbody>
+    <tr>
+      <td>
+<img src="" style="width: 100%; background-color:red;color:#fff;" alt="character image">
+</td>
+<td rowspan="2">
+<label for="tab04" id="tabTrigger04" class="tab-trigger">A. We should study some usefull skill.</label>
+<label for="tab05" id="tabTrigger05" class="tab-trigger">B. We should earn money as long as time allows.</label>
+</td>
+</tr>
+<tr>
+<td>character name</td>
+</tr>
+</tbody>
+</table>
+ <div class="tab-content">
+  <div class="tab-content__item" id="tabTarget04">
+    <p>They spent meaningfull time studying javascript, and are very tired.</p>
+  </div><!-- .tab-content__item -->
+  <div class="tab-content__item" id="tabTarget05">
+  <p>They spent meaningfull time working as part-timer, and are tired a little.</p>
+  </div><!-- .tab-content__item -->
+  </div>
+    </div>
+  </div><!-- .tab-content__item -->
